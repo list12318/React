@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>边缘计算终端</title>
+    <style type="text/css">
+        .___link-all-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 9999;
+            background-color: rgb(34, 51, 102);
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            /* 垂直居中 */
+        }
+
+        .___link-all-loading_icon {
+            width: 40px;
+            height: 40px;
+            background-color: #ffffff;
+            box-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff;
+            -webkit-animation: rotateplane 1.2s infinite ease-in-out;
+            animation: rotateplane 1.2s infinite ease-in-out;
+        }
+
+        .___link-all-loading_size {
+            /*width: 40px;
+            height: 40px;*/
+            position: relative;
+            top: -40px;
+        }
+
+        @-webkit-keyframes rotateplane {
+            0% {
+                -webkit-transform: perspective(120px)
+            }
+
+            50% {
+                -webkit-transform: perspective(120px) rotateY(180deg)
+            }
+
+            100% {
+                -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+            }
+        }
+
+        @keyframes rotateplane {
+            0% {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+            }
+
+            50% {
+                transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+            }
+
+            100% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+                -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <!-- dom加载loading -->
+    <div class="___link-all-loading">
+        <div class='___link-all-loading_icon ___link-all-loading_size'></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    // 事件监听，onload之前显示loading
+    window.addEventListener('load', function () {
+        document.getElementsByClassName('___link-all-loading')[0].style.display = 'none';
+    });
+</script>

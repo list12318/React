@@ -1,0 +1,134 @@
+.video-box {
+  width: 350px;
+  height: calc(100% - 73px);
+  background-color: rgba(7, 46, 105, 0.4);
+  box-shadow: rgb(30, 73, 190) 0px 0px 25px 3px inset;
+  transition: all 0.1s linear;
+  position: absolute;
+  right: 10px;
+  top: 64px;
+
+  .tapContainer {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: -19px;
+    height: 40px;
+    width: 18px;
+    z-index: 99;
+    overflow: hidden;
+    .tap {
+      height: 100%;
+      width: 100%;
+      color: #ddd;
+      box-shadow: 0 0 8px #ddd;
+      border: 1px solid #ddd;
+      cursor: pointer;
+      position: relative;
+      opacity: 0.2;
+      transition: all linear 0.1s;
+      background: #666;
+    }
+    .tap:after,
+    .tap:before {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 10px;
+      background: #ddd;
+      position: absolute;
+      left: 3px;
+    }
+    .tap:before {
+      top: 14px;
+      transform: rotate(45deg);
+    }
+    .tap:after {
+      bottom: 15px;
+      transform: rotate(-45deg);
+    }
+  }
+  .tapContainer:hover {
+    .tap {
+      opacity: 1;
+    }
+  }
+  .video-list {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    padding: 0 14px;
+    .methods-title {
+      width: 100%;
+      height: 30px;
+      color: #ffffff;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      padding-top: 4px;
+    }
+    .list {
+      width: 100%;
+      height: calc(100% - 54px);
+      margin-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      overflow: hidden auto;
+
+      // 不显示滚动条
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+
+      li {
+        width: calc(50% - 4px);
+        height: 90px;
+        border-radius: 5px;
+        margin-bottom: 8px;
+        background: #ffffff;
+        position: relative;
+        cursor: pointer;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 5px;
+        }
+        p {
+          width: 100%;
+          height: 26px;
+          line-height: 26px;
+          font-size: 14px;
+          padding-left: 4px;
+          border-radius: 0 0 5px 5px;
+          color: #ebeef5;
+          background-color: rgba(0, 0, 0, 0.8);
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          z-index: 10;
+        }
+      }
+    }
+  }
+}
+
+.video-box.video-box-collapsed {
+  width: 0;
+  .video-list-box {
+    display: none;
+  }
+  .tapContainer {
+    left: -9px;
+    .tap {
+      right: 0;
+    }
+    .tap:before {
+      transform: rotate(-45deg);
+    }
+    .tap:after {
+      transform: rotate(45deg);
+    }
+  }
+}

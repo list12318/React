@@ -1,0 +1,114 @@
+.analysis {
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE10+ */
+  user-select: none; //不允许页面选中
+  .ant-modal-body {
+    padding: 0;
+    overflow-y: hidden;
+    .content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      .content-top {
+        height: 100%;
+        .tap {
+          display: none;
+        }
+        .left-render {
+          width: 100%;
+          height: 44px;
+          flex: 0 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .item-left {
+            width: calc(100% - 70px);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            p {
+              color: #606266;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            p:first-child {
+              font-size: 16px;
+              font-weight: bold;
+            }
+          }
+          .item-right {
+            width: 70px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .state {
+              display: inline-block;
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              margin-right: 8px;
+            }
+            .ant-btn {
+              width: 18px;
+              height: 18px;
+              min-width: 18px;
+              margin-left: 4px;
+              .antion {
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+      .content-bottom-box {
+        flex: 1;
+        position: relative;
+        overflow-y: auto;
+        .content-bottom {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 1;
+          overflow: hidden auto;
+          img {
+            max-width: 100%;
+          }
+          .canvas-box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10;
+          }
+        }
+        .no-img {
+          width: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          z-index: 100;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: #ffffff;
+          img {
+            width: 100px;
+          }
+          p {
+            font-size: 20px;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}

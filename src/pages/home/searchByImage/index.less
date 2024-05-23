@@ -1,0 +1,58 @@
+.searchByImage {
+  .ant-modal-body {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .left {
+      width: 40%;
+      height: 100%;
+      .ant-upload {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        .upload-img {
+          width: 100%;
+          height: 100%;
+          background-color: #fafafa;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow-y: auto;
+          img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+      }
+    }
+    .right {
+      width: 60%;
+      height: 100%;
+      padding-left: 10px;
+      .table {
+        width: 100%;
+        height: 100%;
+        .ant-table {
+          .ant-table-body {
+            overflow-y: auto !important;
+          }
+          .ant-btn {
+            padding: 4px 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.viewImage {
+  width: 100%;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

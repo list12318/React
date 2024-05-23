@@ -1,0 +1,133 @@
+.component-list {
+  width: 250px;
+  height: 100%;
+  border-right: 1px solid #ebeef5;
+  transition: all 0.1s linear;
+  position: relative;
+  .tapContainer {
+    position: absolute;
+    top: calc(50% - 20px);
+    right: -1px;
+    height: 40px;
+    width: 18px;
+    z-index: 999;
+    overflow: hidden;
+    .tap {
+      height: 100%;
+      width: 100%;
+      color: #ddd;
+      box-shadow: 0 0 8px #ddd;
+      border: 1px solid #ddd;
+      cursor: pointer;
+      position: relative;
+      opacity: 0.2;
+      transition: all linear 0.1s;
+      background: #666;
+    }
+    .tap:after,
+    .tap:before {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 10px;
+      background: #ddd;
+      position: absolute;
+      left: 3px;
+    }
+    .tap:before {
+      top: 14px;
+      transform: rotate(-45deg);
+    }
+    .tap:after {
+      bottom: 15px;
+      transform: rotate(45deg);
+    }
+  }
+  .tapContainer:hover {
+    .tap {
+      opacity: 1;
+    }
+  }
+  .list-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .title {
+      width: 100%;
+      padding: 0 10px;
+      border-bottom: 1px solid #dcdcdc;
+      height: 50px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .search {
+      width: 100%;
+      padding: 10px 10px 0;
+    }
+    .list-scrollbar {
+      flex: auto;
+      overflow: auto;
+      padding-top: 10px;
+      .list-item {
+        width: 100%;
+        padding: 0 10px;
+        border-left: 5px solid transparent;
+        cursor: pointer;
+        .default-list {
+          width: 100%;
+          height: 40px;
+          line-height: 40px;
+          color: #9b9b9b;
+          cursor: pointer;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .list-item.active {
+        border-left-color: #5a6ce6;
+        background: #eaf2ff;
+      }
+      .empty-block {
+        min-height: 60px;
+        text-align: center;
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+      .empty-text {
+        line-height: 60px;
+        width: 50%;
+        color: #909399;
+      }
+    }
+  }
+}
+.component-list.component-list-collapsed {
+  width: 0;
+  .list-content {
+    display: none;
+  }
+  .tapContainer {
+    right: -17px;
+    .tap {
+      right: 0;
+    }
+    .tap:before {
+      transform: rotate(45deg);
+    }
+    .tap:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
